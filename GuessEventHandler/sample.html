@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <title>Assignment 03</title>
+    <script src="https://cdn.firebase.com/js/client/2.4.1/firebase.js"></script>
+    <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js'></script>
+    </head>
+    <body>
+        <div id = "NameInfo">
+            <label for="firstName">First Name:</label>
+            <input type='text' id='firstName' placeholder='First'>
+            <label for="middleName">Middle Name:</label>
+            <input type='text' id='middleName' placeholder='Middle'>
+            <label for="lastName">Last Name:</label>
+            <input type='text' id='lastName' placeholder='Last'>
+
+            <label for="organization">Organization:</label>
+            <input type='text' id='organization' placeholder='Organization'>
+            <label for="contactNo">Contact Number:</label>
+            <input type='text' id='contactNo' placeholder='Contact Number'>
+        </div>
+    </body>
+
+    <script>
+        var firebaseReference = new Firebase('https://guestattendance.firebaseio.com/');
+        var firstRef = $('#firstName');
+        var middleRef = $('#middleName');
+        var lastRef = $('#lastName');
+        var orgRef = $('#organization');
+        var contactRef = $('#contactNo');
+
+        firstRef.keypress(function (e){
+            if(e.keyCode == 13){
+                var first = firstRef.val();
+                var middle = middleRef.val();
+                var last = lastRef.val();
+                var org = orgRef.val();
+                var contact = contactRef.val();
+                firebaseReference.push({firstName: first, middleName: middle, lastName: last, organization: org, contactNumber: contact});
+
+            }
+        });
+    </script>
+</html>

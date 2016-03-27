@@ -1,0 +1,87 @@
+body {
+  background: #d1dde6;
+}
+a:link, a:hover, a:visited, a:active{
+  text-decoration:none;
+  color:black;
+}
+a:hover{
+    background: #82B5AB;
+}
+
+#form-box {
+  background: #FFFFFF;
+  border: 1px solid #b2c3da;
+  margin: 0 0;
+  padding: 40px 20px 30px 20px;
+}
+
+#title-box{
+    background: #BBDEFB;
+    border: 1px solid #ddd;
+    margin-top: 150px;
+    margin-bottom: 0px;
+}
+
+#title{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    display: inline-block;
+}
+
+
+.panel {
+    position: fixed;
+    right: -30em; /*left or right and the width of your navigation panel*/
+    width: 30em; /*should match the above value*/
+    background: #BBDEFB;
+    box-shadow: inset -5px 0 10px -5px rgba(0,0,0,0.4);
+    border-radius: 5px;
+    border: 1px solid #5aa6e2;
+
+}
+
+header {
+	overflow: hidden;
+
+}
+
+.wrap {
+  position: relative;
+  max-width: 580px;
+  margin: auto;
+}
+
+.menu-link {
+  text-decoration: none;
+  display: inline-block;
+  padding: 10px;
+  color: #000;
+  border-radius: 5px;
+  float: left;
+  margin-top: 10px;
+  margin-left: 4em;
+  font-size: 2em;
+}
+
+ul {
+  list-style-type: none;
+  padding: 1px;
+  margin: 2px;
+}
+li{
+    margin: 1px;
+}
+
+#side-header{
+    margin-left: 20px;
+    margin-top: 20px;
+}
+
+#guestlist{
+    overflow-y: auto;
+    overflow-x: auto;
+    height:90%;
+    margin-left: 30px;
+    padding: 1px;
+}

@@ -1,28 +1,49 @@
+<!--
+    HTML file for the event signup handler
+    Author: Shannon Francis N. Retuerma
+    Section: AB-4L
+-->
 <!DOCTYPE html>
 <html>
     <head>
-    <title>Assignment 03</title>
+    <title>Event Guest Attendance</title>
     <script src='https://cdn.firebase.com/js/client/2.4.1/firebase.js'></script>
     <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js'></script>
     <script src='js/foundation.js'></script>
     <script src='js/app.js'></script>
+    <script src="js/jquery.big-slide.js"></script>
+    <!--
     <script src='js/custom.js'></script>
+    <script src='js/test.js'></script>
+    -->
+    <script src='js/final.js'></script>
     <script>
         $(document).foundation();
+        $(document).ready(function() {
+            $('.menu-link').bigSlide();
+        });
     </script>
-    <link rel="stylesheet" href="css/foundation.css" /> 
+    <link rel="stylesheet" href="css/foundation.css" />
     <link rel="stylesheet" href="css/app.css" />
     <link rel="stylesheet" href="css/custom.css" />
     </head>
     <body>
-        <nav>
+        <div class="wrap-push">
+        <nav id="menu" class="panel" role="navigation">
+        <h4 id="side-header">Attendees:</h4>
+        <div id="guestlist">
+            <ul id="list">
+
+            </ul>
+        </div>
+
         </nav>
-
-        <div class="row" id = "mainDiv">
+        <div  class="row" id = "mainDiv" >
             <div class = "large-12 columns" id="title-box">
-                <h1>Event Guest Attendance</h1>
-            </div>
-
+                <header>
+                <span class = "large-10 columns"><h1 id = "title">Guest Sign Up</h1></span> <span class="large-2 columns"><a href="#menu" id="trigger" class="menu-link">&#9776;</a></span>
+                </header>
+            </div class = >
             <div id = "form-box" class= "large-12 columns">
             <div class="larg-6 large-centered columns">
             <form id="nameForm" data-abide>
@@ -61,7 +82,7 @@
                 <div class="row">
                     <div class="medium-6 medium-centered columns">
                         <label>Email Address<small>*</small>
-                            <input type="email" id="emailaddress" placeholder="Email Address" required pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[A-Za-z]{2,}$">
+                            <input type="email" id="emailaddress" placeholder="Email Address" required pattern="^[a-zA-Z0-9._%+-][a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[A-Za-z]{2,}$">
 
                         </label>
                     </div>
@@ -69,7 +90,7 @@
                 <div class="row">
                     <div class="medium-6 medium-centered columns">
                         <label>Contact Number<small>*</small>
-                            <input type="text" id="number" placeholder="+639-xxx-xx-xxxx" required pattern="^[0-9]{9}$">
+                            <input type="text" id="number" placeholder="639123456789" required pattern="^639[0-9]{9}$" title="639 + 9 digit number format">
 
                         </label>
                     </div>
@@ -86,6 +107,6 @@
 
 
 
-
+    </div>
     </body>
 </html>

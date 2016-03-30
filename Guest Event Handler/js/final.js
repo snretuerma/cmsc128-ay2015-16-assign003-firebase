@@ -5,26 +5,23 @@
     Notes: Includes functions for retrieving and adding data to the Firebase server
 */
 
-var ref = new Firebase('https://guestattendance.firebaseio.com/');              // firebase reference
+var ref = new Firebase('https://guestattendance.firebaseio.com/guests');              // firebase reference
 $(document).ready(function(){
-    var firstname;
-    var middlename;
-    var lastname;
+    var fullname;
     var organization;
     var email;
     var contact;
 
     function GetFormData(){                                                     // getting the html form data
-            firstname = document.getElementById("firstname").value;
-            middlename = document.getElementById("middlename").value;
-            lastname = document.getElementById("lastname").value;
+            fullname = document.getElementById("fullname").value;
             organization = document.getElementById("organization").value;
             email = document.getElementById("emailaddress").value;
             contact = document.getElementById("number").value;
     }
 
     function PushData(){                                                        // pushing the data to the firebase server
-          ref.push({name:{firstName: firstname, middleName: middlename, lastName: lastname}, organization: organization, email: email, contactNumber: contact});
+          var newpath = ref.child(fullname);
+              newpath.set({organization: organization, email: email, contactNumber: contact});
     }
 
     function ReloadPage(){                                                      // reloading the page

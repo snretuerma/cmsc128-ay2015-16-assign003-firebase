@@ -56,15 +56,10 @@
       'activeBtn': 'active',
       'easyClose': true,
       'beforeOpen': function () {
-          var ref = new Firebase('https://guestattendance.firebaseio.com/');
+          var ref = new Firebase('https://guestattendance.firebaseio.com/guests');
           ref.on("child_added", function(snapshot) {
-              var nameSnapshot = snapshot.child("name");
-              var fname = nameSnapshot.child("firstName");
-              var mname = nameSnapshot.child("middleName");
-              var lname = nameSnapshot.child("lastName");
-              var dbfullname = fname.val() + " " + mname.val() + " " + lname.val();
-              console.log(fname.val() + " " + mname.val() + " " + lname.val());
-              $("#list").append("<li>" + dbfullname+"</li>");
+              //var nameSnapshot = snapshot;
+              $("#list").append("<li>" + snapshot.key() +"</li>");
           });
       },
       'afterOpen': function() {},
